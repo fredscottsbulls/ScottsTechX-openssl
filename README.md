@@ -1,67 +1,40 @@
-# ScottsTechX-openssl
+# 🔐 ScottsTechX OpenSSL
 
-⚙️ DevOps Tool | Part of ScottsTechX Tool Suite
+<p align="center">
+  <img src="https://img.shields.io/badge/OpenSSL-SSL-TLS-00ff88?style=for-the-badge&logo=linux&logoColor=black" alt="OpenSSL"/>
+  <img src="https://img.shields.io/badge/Open-Source-00ff88?style=for-the-badge&logo=github&logoColor=black" alt="Open Source"/>
+</p>
 
----
-
-## About
-
-**SSL/TLS toolkit - generate certs, test connections, encrypt data**
-
-Official ScottsTechX tool repo — part of the [ScottsTechX Tool Installer](https://github.com/fredscottsbulls/ScottsTechX-Tool-Installer) suite.
-
-**Official Website:** https://www.openssl.org/
+> **SSL/TLS toolkit — generate certificates, test connections, encrypt data, analyze handshake.**
 
 ---
 
-## Quick Install
+## ⚡ What It Does
 
-### Via ScottsTechX Tool Installer:
+OpenSSL provides SSL/TLS functionality — generate keys, create certificates, test servers, encrypt/decrypt data, and analyze cryptographic operations.
+
+## 🚀 Quick Usage
 
 ```bash
-scotts-techx install openssl
+# Generate private key
+openssl genrsa -out key.pem 2048
+
+# Create self-signed cert
+openssl req -new -x509 -key key.pem -out cert.pem -days 365
+
+# Test SSL connection
+openssl s_client -connect target.com:443
+
+# Check certificate
+openssl x509 -in cert.pem -text -noout
+
+# Encrypt file
+openssl enc -aes256 -in plain.txt -out encrypted.bin
+
+# Decrypt file
+openssl enc -d -aes256 -in encrypted.bin -out plain.txt
 ```
 
-### Manual Install:
-
-```bash
-# Linux/macOS/Git Bash
-curl -fsSL https://raw.githubusercontent.com/fredscottsbulls/ScottsTechX-openssl/main/install.sh | bash
-
-# Windows PowerShell
-irm https://raw.githubusercontent.com/fredscottsbulls/ScottsTechX-openssl/main/install.ps1 | iex
-```
-
 ---
 
-## What is OPENSSL?
-
-SSL/TLS toolkit - generate certs, test connections, encrypt data.
-
-For full documentation: https://www.openssl.org/
-
----
-
-## ScottsTechX Tool Suite (30 tools)
-
-| Category | Tools |
-|----------|-------|
-| Simple CLI | nmap, curl, wget, jq, git, python3, ffmpeg, traceroute, netcat, openssh |
-| Pentesting | hydra, sqlmap, nikto, hashcat, gobuster, searchsploit, masscan, burpsuite, ncat, Responder |
-| DevOps | docker, vim, htop, tmux, tar, make, openssl, ansible, kubectl, terraform |
-
-**[View Full Suite](https://github.com/fredscottsbulls/ScottsTechX-Tool-Installer)**
-
----
-
-## Disclaimer
-
-**For authorized use only.** Unauthorized access to computer systems is illegal.
-
----
-
-<div align="center">
-
-**ScottsTechX** | Fred Scotts | https://github.com/fredscottsbulls
-
-</div>
+MIT © 2026
